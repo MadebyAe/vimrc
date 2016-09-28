@@ -250,7 +250,7 @@ if has("gui_running")
 
 	" Highlights the current line background
 	set cursorline
-	colorscheme gotham
+	colorscheme Mustang
 
 	"autocmd VimEnter * TagbarOpen
 
@@ -342,6 +342,8 @@ if has("gui_running")
 	endif
 else
 	set t_Co=256
+    set cursorline
+
 	colorscheme Mustang
 	set mouse=a
 endif
@@ -351,6 +353,8 @@ endif
 if filereadable($HOME.'/.vimrc_local')
 	source $HOME/.vimrc_local
 endif
+"------- FLow --------
+let g:flow#enable = 0
 "------- Emmet -------
 let g:user_emmet_leader_key='<C-K>'
 let g:user_emmet_expandabbr_key = '<c-k>'

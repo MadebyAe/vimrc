@@ -1,57 +1,55 @@
-" Maintainer:	Henrique C. Alves (hcarvalhoalves@gmail.com)
-" Version:      1.0
-" Last Change:	September 25 2008
+" Mustang colorscheme for Vim
+" Cool text with VFD constants, sunny searches and
+" incandescent errors.
+" Maintainer: Daniel Lima <danielm@tinyhub.tk>
+" License: MIT
 
-set background=dark
+if $TERM != 'linux' || has('gui')
 
-hi clear
+set bg=dark
+set t_Co=256
+let g:colors_name="Mustang"
 
-if exists("syntax_on")
-  syntax reset
-endif
+hi Normal        ctermfg=251    ctermbg=None  cterm=None  guifg=#c6c6c6  guibg=#1c1c1c
+hi Cursor        ctermfg=Black  ctermbg=White cterm=None  guifg=Black    guibg=White
+hi SpecialKey    ctermfg=30     ctermbg=None  cterm=None  guifg=#008787  guibg=#1c1c1c
+hi Directory     ctermfg=73     ctermbg=None  cterm=None  guifg=#78ACAE  guibg=#1c1c1c
+hi ErrorMsg      ctermfg=203    ctermbg=None  cterm=None  guifg=#ff5f5f  guibg=#1c1c1c
+hi PreProc       ctermfg=75     ctermbg=None  cterm=None  guifg=#5fafff  guibg=#1c1c1c
+hi Search        ctermfg=227    ctermbg=None  cterm=None  guifg=#ffff5f  guibg=#1c1c1c
+hi Type          ctermfg=75     ctermbg=None  cterm=None  guifg=#5fafff  guibg=#1c1c1c
+hi Statement     ctermfg=75     ctermbg=None  cterm=None  guifg=#5fafff  guibg=#1c1c1c
+hi Comment       ctermfg=242    ctermbg=None  cterm=None  guifg=#6c6c6c  guibg=#1c1c1c
+hi Identifier    ctermfg=105    ctermbg=None  cterm=None  guifg=#8787ff  guibg=#1c1c1c
+hi DiffText      ctermfg=203    ctermbg=None  cterm=None  guifg=#ff5f5f  guibg=#1c1c1c
+hi Constant      ctermfg=73     ctermbg=None  cterm=None  guifg=#78ACAE  guibg=#1c1c1c
+hi Todo          ctermfg=118    ctermbg=None  cterm=None  guifg=#87ff00  guibg=#1c1c1c
+hi Error         ctermfg=203    ctermbg=None  cterm=None  guifg=#ff5f5f  guibg=#1c1c1c
+hi Special       ctermfg=103    ctermbg=None  cterm=None  guifg=#8787af  guibg=#1c1c1c
+hi Ignore        ctermfg=220    ctermbg=None  cterm=None  guifg=#ffd700  guibg=#1c1c1c
+hi Underline     ctermfg=244    ctermbg=None  cterm=None  guifg=#808080  guibg=#1c1c1c
+hi NonText       ctermfg=244     ctermbg=None  cterm=None guifg=#808080  guibg=#1c1c1c
+hi MatchParen    ctermfg=203    ctermbg=None  cterm=None  guifg=#ff5f5f  guibg=#1c1c1c
 
-let colors_name = "mustang"
+hi Folded        ctermfg=247    ctermbg=234   cterm=None  guifg=#9e9e9e  guibg=#1c1c1c
+hi FoldColumn    ctermfg=247    ctermbg=234   cterm=None  guifg=#9e9e9e  guibg=#1c1c1c
+hi StatusLineNC  ctermfg=238    ctermbg=234   cterm=None  guifg=#262626  guibg=#444444
+hi StatusLine    ctermfg=247    ctermbg=234   cterm=None  guifg=#262626  guibg=#9e9e9e
+hi VertSplit     ctermfg=247    ctermbg=None  cterm=None  guifg=#9e9e9e  guibg=#1c1c1c
 
-" Vim >= 7.0 specific colors
-if version >= 700
-  hi CursorLine guibg=#2d2d2d ctermbg=236
-  hi CursorColumn guibg=#2d2d2d ctermbg=236
-  hi MatchParen guifg=#d0ffc0 guibg=#2f2f2f gui=bold ctermfg=157 ctermbg=237 cterm=bold
-  hi Pmenu 		guifg=#ffffff guibg=#444444 ctermfg=255 ctermbg=238
-  hi PmenuSel 	guifg=#000000 guibg=#b1d631 ctermfg=0 ctermbg=148
-endif
+hi LineNr        ctermfg=247    ctermbg=234   cterm=None  guifg=#9e9e9e  guibg=#262626
+hi CursorLineNr  ctermfg=White  ctermbg=236   cterm=None  guifg=White    guibg=#303030
+hi CursorLine                   ctermbg=236   cterm=None                 guibg=#303030
+hi Visual                       ctermbg=238                              guibg=#444444
 
-" General colors
-hi Cursor 		guifg=NONE    guibg=#626262 gui=none ctermbg=241
-hi Normal 		guifg=#e2e2e5 guibg=#202020 gui=none ctermfg=253 ctermbg=234
-hi NonText 		guifg=#808080 guibg=#303030 gui=none ctermfg=244 ctermbg=235
-hi LineNr 		guifg=#808080 guibg=#000000 gui=none ctermfg=244 ctermbg=232
-hi StatusLine 	guifg=#d3d3d5 guibg=#444444 gui=italic ctermfg=253 ctermbg=238 cterm=italic
-hi StatusLineNC guifg=#939395 guibg=#444444 gui=none ctermfg=246 ctermbg=238
-hi VertSplit 	guifg=#444444 guibg=#444444 gui=none ctermfg=238 ctermbg=238
-hi Folded 		guibg=#384048 guifg=#a0a8b0 gui=none ctermbg=4 ctermfg=248
-hi Title		guifg=#f6f3e8 guibg=NONE	gui=bold ctermfg=254 cterm=bold
-hi Visual		guifg=#faf4c6 guibg=#3c414c gui=none ctermfg=254 ctermbg=4
-hi SpecialKey	guifg=#808080 guibg=#343434 gui=none ctermfg=244 ctermbg=236
+hi Pmenu         ctermfg=Gray   ctermbg=238   cterm=None  guifg=Gray     guibg=#444444
+hi PmenuSel      ctermfg=White  ctermbg=25    cterm=None  guifg=White    guibg=#005faf
+hi PmenuSbar     ctermfg=238    ctermbg=236   cterm=None  guifg=#444444  guibg=#303030
+hi PmenuThumb    ctermfg=Gray   ctermbg=Gray  cterm=None  guifg=Gray     guibg=Gray
 
-" Syntax highlighting
-hi Comment 		guifg=#808080 gui=italic ctermfg=244
-hi Todo 		guifg=#8f8f8f gui=italic ctermfg=245
-hi Boolean      guifg=#b1d631 gui=none ctermfg=148
-hi String 		guifg=#b1d631 gui=italic ctermfg=148
-hi Identifier 	guifg=#b1d631 gui=none ctermfg=148
-hi Function 	guifg=#ffffff gui=bold ctermfg=255
-hi Type 		guifg=#7e8aa2 gui=none ctermfg=103
-hi Statement 	guifg=#7e8aa2 gui=none ctermfg=103
-hi Keyword		guifg=#ff9800 gui=none ctermfg=208
-hi Constant 	guifg=#ff9800 gui=none  ctermfg=208
-hi Number		guifg=#ff9800 gui=none ctermfg=208
-hi Special		guifg=#ff9800 gui=none ctermfg=208
-hi PreProc 		guifg=#faf4c6 gui=none ctermfg=230
-hi Todo         guifg=#000000 guibg=#e6ea50 gui=italic
+hi DiffAdd       ctermfg=10     ctermbg=None  cterm=None  guifg=#00ff00  guibg=#1c1c1c
+hi DiffChange    ctermfg=227    ctermbg=None  cterm=None  guifg=#ffff5f  guibg=#1c1c1c
+hi DiffDelete    ctermfg=203    ctermbg=None  cterm=None  guifg=#ff5f5f  guibg=#1c1c1c
+hi SignColumn    ctermfg=None   ctermbg=None  cterm=None  guifg=#1c1c1c  guibg=#1c1c1c
 
-" Code-specific colors
-hi pythonOperator guifg=#7e8aa2 gui=none ctermfg=103
-
-hi Search     guifg=white	guibg=NONE	cterm=NONE	gui=underline
-
+end
