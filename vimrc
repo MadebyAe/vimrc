@@ -33,6 +33,7 @@ set splitright
 set tabstop=4
 set shiftwidth=4
 set hidden
+set list
 set autoread
 filetype indent on
 filetype plugin on
