@@ -348,13 +348,14 @@ else
 	colorscheme Mustang
 	set mouse=a
 endif
-
-
+"------  Control P ------
+set runtimepath^=~/.vim/bundle/ctrlp.vim
 "------  Local Overrides  ------
 if filereadable($HOME.'/.vimrc_local')
 	source $HOME/.vimrc_local
 endif
-"------- FLow --------
+"------- Flow --------
+let g:flow#autoclose = 0
 let g:flow#enable = 0
 "------- Emmet -------
 let g:user_emmet_leader_key='<C-K>'
@@ -363,6 +364,9 @@ let g:instant_markdown_slow = 1
 "------- Clipbaord -------
 set clipboard=unnamed
 set wrap linebreak nolist
+
+"------- List -----------
+set list
 
 map <F3> :mksession! ~/.vim/sessions/vim_session <cr> " Quick write session with F2
 map <F4> :source ~/.vim/sessions/vim_session <cr>     " And load session with F3
