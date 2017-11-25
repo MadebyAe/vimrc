@@ -227,10 +227,9 @@ au BufWritePost *.coffee silent make!
 autocmd QuickFixCmdPost * nested cwindow | redraw!
 
 
-"------  JSX Filetype Settings ------
+"------  Lint Settings ------
 autocmd! BufEnter  *.jsx  let b:syntastic_checkers=['jsxhint']
 autocmd! BufEnter  *.js let g:syntastic_javascript_checkers = ['eslint']
-
 
 "------  EJS Filetype Settings  ------
 au BufNewFile,BufRead *.ejs set filetype=html
@@ -358,6 +357,8 @@ endif
 let g:flow#autoclose = 0
 let g:flow#enable = 0
 "------- Emmet -------
+let g:user_emmet_settings = webapi#json#decode(
+\  join(readfile(expand('~/.emmetrc')), "\n"))
 let g:user_emmet_leader_key='<C-K>'
 let g:user_emmet_expandabbr_key = '<c-k>'
 let g:instant_markdown_slow = 1
@@ -365,6 +366,9 @@ let g:instant_markdown_slow = 1
 set clipboard=unnamed
 set wrap linebreak nolist
 
+"-------Blibk -----------
+set visualbell t_vb=    " turn off error beep/flash
+set novisualbell        " turn off visual bell
 "------- List -----------
 set list
 
