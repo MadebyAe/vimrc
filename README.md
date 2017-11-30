@@ -92,5 +92,7 @@ Other than the myriad of built-in methods for navigating text...
 
 ### Copying and Pasting between OS
 
-* Use `<Leader>c` to copy the highlighted text into the OS clipboard
-* Use `<Leader>v` to paste the OS clipboard into the document
+* Use `<Leader>c` to copy the highlighted text into the OS clipboard.
+* Use `<Leader>v` to paste the OS clipboard into the document.
+* Use `c` to cut the highlighted text into the OS clipboard.
+* Use `c` to cut the highlighted text into the OS clipboard.

@@ -33,6 +33,7 @@ set splitright
 set tabstop=4
 set shiftwidth=4
 set hidden
+set list
 set autoread
 filetype indent on
 filetype plugin on
@@ -226,10 +227,9 @@ au BufWritePost *.coffee silent make!
 autocmd QuickFixCmdPost * nested cwindow | redraw!
 
 
-"------  JSX Filetype Settings ------
+"------  Lint Settings ------
 autocmd! BufEnter  *.jsx  let b:syntastic_checkers=['jsxhint']
 autocmd! BufEnter  *.js let g:syntastic_javascript_checkers = ['eslint']
-
 
 "------  EJS Filetype Settings  ------
 au BufNewFile,BufRead *.ejs set filetype=html
@@ -347,21 +347,30 @@ else
 	colorscheme Mustang
 	set mouse=a
 endif
-
-
+"------  Control P ------
+set runtimepath^=~/.vim/bundle/ctrlp.vim
 "------  Local Overrides  ------
 if filereadable($HOME.'/.vimrc_local')
 	source $HOME/.vimrc_local
 endif
-"------- FLow --------
+"------- Flow --------
+let g:flow#autoclose = 0
 let g:flow#enable = 0
 "------- Emmet -------
+let g:user_emmet_settings = webapi#json#decode(
+\  join(readfile(expand('~/.emmetrc')), "\n"))
 let g:user_emmet_leader_key='<C-K>'
 let g:user_emmet_expandabbr_key = '<c-k>'
 let g:instant_markdown_slow = 1
 "------- Clipbaord -------
 set clipboard=unnamed
 set wrap linebreak nolist
+
+"-------Blibk -----------
+set visualbell t_vb=    " turn off error beep/flash
+set novisualbell        " turn off visual bell
+"------- List -----------
+set list
 
 map <F3> :mksession! ~/.vim/sessions/vim_session <cr> " Quick write session with F2
 map <F4> :source ~/.vim/sessions/vim_session <cr>     " And load session with F3
