@@ -363,7 +363,14 @@ let g:user_emmet_leader_key='<C-K>'
 let g:user_emmet_expandabbr_key = '<c-k>'
 let g:instant_markdown_slow = 1
 "------- Clipbaord -------
-set clipboard=unnamed
+if has("clipboard")
+  set clipboard=unnamed " copy to the system clipboard
+
+  if has("unnamedplus") " X11 support
+    set clipboard+=unnamedplus
+  endif
+endif
+
 set wrap linebreak nolist
 
 "-------Blibk -----------
