@@ -357,8 +357,7 @@ endif
 let g:flow#autoclose = 0
 let g:flow#enable = 0
 "------- Emmet -------
-let g:user_emmet_settings = webapi#json#decode(
-\  join(readfile(expand('~/.emmetrc')), "\n"))
+let g:user_emmet_settings = webapi#json#decode(join(readfile(expand('~/.emmetrc')), "\n"))
 let g:user_emmet_leader_key='<C-K>'
 let g:user_emmet_expandabbr_key = '<c-k>'
 let g:instant_markdown_slow = 1
